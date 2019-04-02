@@ -1,0 +1,40 @@
+<div class="full">
+
+    <mat-card class="card-container">
+  
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="form">
+        <table class="example=full-width" cellspacing="0">
+          <tr>
+            <td>
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Username" [(ngModel)]="username" name="username" required>
+                <mat-icon matSuffix>account_box</mat-icon>
+                <mat-error *ngIf="username1.invalid">{{getErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </td>
+          </tr>
+          <tr>
+              <td>
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Password"  [(ngModel)]="password" name="password" [type]="hide ? 'password' : 'text'" required>
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  <mat-error *ngIf="password1.invalid">{{getErrorMessage1()}}</mat-error>
+                </mat-form-field>
+              </td>
+            </tr>
+          </table>
+          </form>
+    </mat-card-content>
+    <mat-card-actions class="button">
+            <button mat-raised-button  (click)="login()">Login</button>
+    </mat-card-actions>
+      
+  </mat-card>
+</div>
+
+
+

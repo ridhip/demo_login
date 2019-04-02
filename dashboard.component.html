@@ -1,0 +1,188 @@
+<!--
+<mat-toolbar class="dashboard-toolbar" >
+    <span class="example-spacer">logo</span>
+    <span class="example-spacer">Welcome</span>
+    <button mat-raised-button color="accent">logout</button> 
+</mat-toolbar>
+
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+    
+     fxLayoutGap="3px"
+     fxLayoutGap.xs="0"
+     
+     >
+
+
+<div class="item item-1" fxFlex="30%">
+<mat-card class="dashboard-avatar-card">
+        <mat-card-header>
+                <img mat-card-avatar src="assets/images/pic3.png"  >
+                <mat-card-title class="mat" >User1</mat-card-title>              
+            </mat-card-header>
+</mat-card>
+ </div>
+
+
+ <div class="item item-2" fxFlex="70%" fxFlexOrder="2">
+<mat-card  class="dashboard-card">
+                <mat-card-header>
+                        
+                        <mat-card-title class="mat " >User2</mat-card-title>
+                        <mat-card-subtitle class="mat1" >Online</mat-card-subtitle>
+                       
+                    </mat-card-header>
+</mat-card>
+        
+
+  </div>
+ 
+</div>-->
+
+<div class="example-container">
+    
+     
+
+      
+        <mat-sidenav-container class="example-sidenav-container"  >
+          <mat-sidenav #snav fixedTopGap="0"
+         
+              class="sidenav-width"
+              fixedInViewport="true"
+            >
+                        
+                        
+                           
+                            <mat-toolbar >
+                                <div mat-card-avatar class="example-header-image"></div>
+                                <span class="example-spacer"></span>
+                                <button mat-icon-button >
+                                    <mat-icon>chat</mat-icon>
+                                  </button>
+                                <button mat-icon-button [matMenuTriggerFor]="menu">
+                                    <mat-icon>more_vert</mat-icon>
+                                  </button>
+                                  <mat-menu #menu="matMenu">
+                                    <button mat-menu-item>
+                                      <mat-icon>group_add</mat-icon>
+                                      <span>New Group</span>
+                                    </button>
+                                    <button mat-menu-item >
+                                      <mat-icon>account_circle</mat-icon>
+                                      <span>Profile</span>
+                                    </button>
+                                    <button mat-menu-item>
+                                      <mat-icon>settings</mat-icon>
+                                      <span>Settings</span>
+                                    </button>
+                                    <button mat-menu-item>
+                                        <mat-icon>logout</mat-icon>
+                                        <span>Logout</span>
+                                      </button>
+                                  </mat-menu>
+                               
+                            </mat-toolbar>
+                      
+                      
+                            <form class="example-form">
+
+                            <mat-form-field class="example-full-width">
+                             
+                              <input type="search" matInput placeholder="Search">
+                              <mat-icon matSuffix>search</mat-icon>
+                            </mat-form-field>
+                          </form>
+<!--
+<mat-nav-list class="navs">
+        <a mat-list-item  *ngFor="let nav of navs" [class.selected]="nav === selectedDashboard" (click)="onSelect(nav)">
+            <div mat-line>
+                {{ nav.name }}
+              </div>
+              <p mat-line>
+                {{ nav.msg }}
+              </p></a>
+  </mat-nav-list>
+
+  <ul class="dashboards">
+      <li *ngFor="let dashboard of dashboards"
+        [class.selected]="dashboard === selectedDashboard"
+        (click)="onSelect(dashboard)">
+        <span class="badge">{{dashboard.name}}</span> {{dashboard.msg}}
+      </li>
+    </ul>-->
+
+    <mat-list class="lists">
+        <mat-list-item *ngFor="let list of lists"  
+        [class.selected]="list === selectedList"
+        (click)="onSelect(list)" >
+          <h3 matLine> {{list.name}} </h3>
+          <p matLine>
+           
+            <span class="demo-2"> {{list.message}} </span>
+            <mat-divider></mat-divider>
+          </p>
+        </mat-list-item>
+      </mat-list>
+
+
+
+
+
+
+
+
+  </mat-sidenav>
+
+
+
+      
+          <mat-sidenav-content>
+           
+              <mat-toolbar >
+                  <div mat-card-avatar class="example-header-image1"></div>
+                  <div *ngIf="selectedList">
+        
+                      <h4>   {{selectedList.name }} </h4></div>
+                  <span class="example-spacer"></span>
+                  <button mat-icon-button>
+                      <mat-icon>attach_file</mat-icon>
+                    </button>
+                  <button mat-icon-button [matMenuTriggerFor]="attachment">
+                      <mat-icon>more_vert</mat-icon>
+                    </button>
+                    <mat-menu #attachment="matMenu">
+                      <button mat-menu-item>                       
+                        <span>Contact Info</span>
+                      </button>
+                      <button mat-menu-item >                     
+                        <span>Select Message</span>
+                      </button>
+                      <button mat-menu-item>
+                        <span>Clear Message</span>
+                      </button>
+                      <button mat-menu-item>
+                          <span>Delete Chat</span>
+                        </button>
+                    </mat-menu>
+                   </mat-toolbar>
+
+
+                   
+                      <div *ngIf="selectedList">
+        
+                      
+                        <div>
+                           <label>name:
+                             <input [(ngModel)]="selectedList.name" placeholder="name">
+                           </label>
+                         </div>
+                         </div>
+                    
+
+             
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+      </div>
+      
+      

@@ -1,0 +1,47 @@
+.mat-icon {
+    padding: 0 30px;
+  }
+  
+  .example-spacer {
+    flex: 1 1 auto;
+    
+  }
+  .card-container {
+    width: 280px;
+    margin: 12% auto;
+    background-color: lightskyblue;
+    color: aliceblue;
+    text-align: center;
+  }
+  .mat-card-title{
+    font-size: 22px;
+    
+  }
+  .done {
+  color: white;
+  }
+  .mat-form-field{
+      font-size: 14px;
+  }
+  .mat-fab{
+     background-color: gray;
+     color: aliceblue;
+     align-items: center;
+  }
+  .mat-raised-button {
+      background-color: deeppink;
+        color: aliceblue;
+    
+  }
+  
+
+
+  /*
+  .full{
+    background-image: url('src/assets/images/pic11.jpg');
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-size:  cover;
+    background-color: #999;
+    height:609px;
+  }*/
